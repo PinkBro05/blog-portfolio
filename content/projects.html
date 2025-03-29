@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Pink</title>
+  <meta name="description" content="Pink's projects">
+  <meta name="author" content="Pink">
+  <style>
+    :root {
+      --primary-color: #ffffff;
+      --secondary-color: #a0a0a0;
+      --accent-color: #ff69b4;
+      --background-color: #121212;
+      --card-background: #1e1e1e;
+      --border-radius: 10px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      --spacing: 20px;
+      --container-width: 95%;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--primary-color);
+      background-color: var(--background-color);
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1, h2, h3 {
+      color: var(--primary-color);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      width: var(--container-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--secondary-color);
+    }
+
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing);
+      margin-bottom: 40px;
+      width: var(--container-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-card {
+      background-color: var(--card-background);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      padding: var(--spacing);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      border-top: 3px solid var(--accent-color);
+      float: left;
+      width: calc(33.333% - var(--spacing));
+      margin-bottom: var(--spacing);
+      box-sizing: border-box;
+      min-height: 200px;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 10px;
+      font-weight: 400;
+    }
+
+    .project-card .role {
+      font-weight: bold;
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
+
+    .project-card .description {
+      flex-grow: 1;
+      color: var(--secondary-color);
+    }
+
+    .project-card .contributions {
+      margin-top: 15px;
+      color: var(--secondary-color);
+    }
+
+    .project-card .contributions ul {
+      padding-left: 20px;
+    }
+    
+    .project-card .contributions ul li {
+      margin-bottom: 5px;
+    }
+
+    .project-card .links {
+      margin-top: 15px;
+    }
+
+    .project-card .links a {
+      display: inline-block;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s ease;
+    }
+
+    .project-card .links a:hover {
+      color: #ff9ed8; /* Lighter pink on hover */
+    }
+
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+      color: var(--primary-color);
+      width: var(--container-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+
+    .contact-section {
+      text-align: center;
+      margin: 60px auto 30px;
+      width: var(--container-width);
+    }
+
+    .contact-section a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .project-card {
+        width: calc(50% - var(--spacing));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .project-card {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-card {
+        width: 100%;
+        float: none;
+      }
+    }
+    
+    /* Clear fix for floating elements */
+    .projects-container::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Projects</h1>
+    <p>A collection of my key projects in AI, machine learning, and financial market analysis.</p>
+  </header>
+
+  <h2 class="section-title">Featured Projects</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <h3>Mitigation of Large Language Model (LLM) Hallucination</h3>
+      <div class="role"><strong>Role:</strong> Project Leader</div>
+      <div class="description">
+        <p>Addressing hallucination in LLMs using Fine-Tuning (LoRA &amp; QLoRA) and Self-Refine techniques, applied to LLaMA 3 8B Instruct in the medical domain. Our model outperforms the base model in MELT-HALT and HaluBench benchmarks.</p>
+      </div>
+      <div class="contributions">
+        <p><strong>Key Contributions:</strong></p>
+        <ul>
+          <li>Led research and project management</li>
+          <li>Developed and fine-tuned models locally and on high-performance computing infrastructure</li>
+          <li>Worked on LoRA, QLoRA, prompt engineering, and self-refinement techniques</li>
+        </ul>
+      </div>
+      <div class="links">
+        🔗 <a href="https://github.com/Pinkbro05/LLM-Hallucination-Mitigation">GitHub Repository</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Melbourne House Market Analysis using ML</h3>
+      <div class="role"><strong>Role:</strong> Project Leader</div>
+      <div class="description">
+        <p>A machine learning project analyzing Melbourne's house market for investors. Deployed models via a full-stack web application using React (Front-End) and FastAPI (Back-End).</p>
+      </div>
+      <div class="contributions">
+        <p><strong>Key Contributions:</strong></p>
+        <ul>
+          <li>Collected and processed real estate data</li>
+          <li>Implemented Random Forest Regression/Classification and Clustering techniques</li>
+          <li>Developed and deployed ML models through a RESTful API</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Other Projects</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <h3>Vietnamese Blog Titles Classification using Transformers</h3>
+      <div class="role"><strong>Role:</strong> Developer</div>
+      <div class="description">
+        <p>A deep learning project to classify Vietnamese blog titles using Transformer models.</p>
+      </div>
+      <div class="contributions">
+        <p><strong>Key Contributions:</strong></p>
+        <ul>
+          <li>Implemented PyTorch-based Transformer models</li>
+          <li>Explored advanced optimization techniques: ROBE, Mixture of Experts (MoE), synthetic data generation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Market Intelligence Analysis for Commodity Futures Investment</h3>
+      <div class="role"><strong>Role:</strong> Project Leader</div>
+      <div class="description">
+        <p>A real-world industry project supporting commodity futures trading (gold, oil) using ML/DL. Analyzed geopolitical, economic, and financial factors.</p>
+      </div>
+      <div class="contributions">
+        <p><strong>Key Contributions:</strong></p>
+        <ul>
+          <li>Developed predictive models with Transformers, LSTMs, GRUs, and CNNs</li>
+          <li>Conducted feature engineering for complex market analysis</li>
+          <li>Applied interdisciplinary approach combining finance and AI</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>AI-Driven Market Analysis Tool</h3>
+      <div class="role"><strong>Tech Stack:</strong> Python, TensorFlow, pandas, plotly</div>
+      <div class="description">
+        <p>A machine learning system that analyzes financial market data to identify patterns and predict potential market movements. The system incorporates sentiment analysis from financial news and social media.</p>
+      </div>
+      <div class="links">
+        <a href="https://github.com/Pinkbro05/market-analysis">View on GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Personal Blog &amp; Portfolio</h3>
+      <div class="role"><strong>Tech Stack:</strong> Hugo, HTML/CSS, JavaScript</div>
+      <div class="description">
+        <p>The website you're currently viewing! Built with Hugo using the Coder theme, featuring responsive design and dark/light mode toggle.</p>
+      </div>
+      <div class="links">
+        <a href="https://github.com/Pinkbro05/blog-portfolio">View on GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-section">
+    <h2>Get in Touch</h2>
+    <p>Interested in collaborating on a project? Have questions about my work? Feel free to <a href="/contact">contact me</a> for more information.</p>
+  </div>
+</body>
+</html>

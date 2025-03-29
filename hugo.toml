@@ -16,9 +16,9 @@ pagerSize = 20  # Add this section instead
 style = "github-dark"
 
 [params]
-author = "Your Name"
-info = "Short bio or description"
-description = "Your Name's personal website"
+author = "Pink"
+info = "AI Researcher"
+description = "Pink's personal website"
 keywords = "blog,developer,personal"
 colorScheme = "auto"
 # Hide the toggle button, along with the associated vertical divider
@@ -40,10 +40,10 @@ weight = 1
 url = "https://github.com/Pinkbro05/"
 
 [[params.social]]
-name = "Twitter"
-icon = "fa fa-twitter fa-2x"
+name = "Instagram"
+icon = "fa fa-instagram fa-2x"
 weight = 2
-url = "https://twitter.com/yourusername/"
+url = "https://instagram.com/pinkbro__/"
 
 # Menu links
 [[menu.main]]
@@ -59,7 +59,7 @@ url = "about/"
 [[menu.main]]
 name = "Projects"
 weight = 3
-url = "projects/"
+url = "projects/"   
 
 [[menu.main]]
 name = "Contact"
