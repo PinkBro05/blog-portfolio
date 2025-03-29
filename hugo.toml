@@ -1,0 +1,71 @@
+baseURL = "https://pinknn.com"
+title = "Pink"
+theme = "hugo-coder"
+languageCode = "en"
+defaultContentLanguage = "en"
+# paginate = 20  # Remove this line
+enableEmoji = true
+
+[pagination]
+pagerSize = 20  # Add this section instead
+
+# Enable Disqus comments
+# disqusShortname = "yourdiscussshortname"
+
+[markup.highlight]
+style = "github-dark"
+
+[params]
+author = "Your Name"
+info = "Short bio or description"
+description = "Your Name's personal website"
+keywords = "blog,developer,personal"
+colorScheme = "auto"
+# Hide the toggle button, along with the associated vertical divider
+hideColorSchemeToggle = false
+# Series see also post count
+maxSeeAlsoItems = 5
+# Custom CSS
+customCSS = []
+# Custom SCSS, file path is relative to Hugo's asset folder (default: {your project root}/assets)
+customSCSS = []
+# Custom JS
+customJS = []
+
+# Social links
+[[params.social]]
+name = "Github"
+icon = "fa fa-github fa-2x"
+weight = 1
+url = "https://github.com/yourusername/"
+
+[[params.social]]
+name = "Twitter"
+icon = "fa fa-twitter fa-2x"
+weight = 2
+url = "https://twitter.com/yourusername/"
+
+# Menu links
+[[menu.main]]
+name = "Blog"
+weight = 1
+url  = "posts/"
+
+[[menu.main]]
+name = "About"
+weight = 2
+url = "about/"
+
+[[menu.main]]
+name = "Projects"
+weight = 3
+url = "projects/"
+
+[[menu.main]]
+name = "Contact"
+weight = 4
+url = "contact/"
+
+[module]
+[module.hugoVersion]
+min = "0.124.0"
