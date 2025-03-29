@@ -37,7 +37,7 @@ customJS = []
 name = "Github"
 icon = "fa fa-github fa-2x"
 weight = 1
-url = "https://github.com/yourusername/"
+url = "https://github.com/Pinkbro05/"
 
 [[params.social]]
 name = "Twitter"
