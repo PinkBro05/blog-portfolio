@@ -1,34 +1,38 @@
 +++
-title = "About Me"
-description = "About Pink"
-date = "2025-03-29"
-aliases = ["about-me", "about-pink", "contact"]
+title = "About"
+description = "AI Research Paper Summaries and Analysis"
+date = "2025-04-12"
+aliases = ["about-us", "about-pink", "contact"]
 author = "Pink"
 +++
 
-# Hi, I'm Pink! 👋
+# Welcome to My AI Research Blog
 
-I'm passionate about AI, deep learning research, and real-world machine learning applications. With a keen interest in financial market analysis and AI-driven trading strategies, I'm constantly exploring and updating my knowledge of new ML/DL techniques.
+## What I Do
+
+I specialize in summarizing and analyzing research papers in the fields of **Artificial Intelligence (AI)**, **Machine Learning (ML)**, and **Deep Learning (DL)**. My goal is to make complex research accessible to everyone interested in staying up-to-date with the latest advancements in these rapidly evolving fields.
+
+## Why Read My Blog?
+
+* **Comprehensive Summaries**: I break down complex papers into digestible, clear explanations
+* **Regular Updates**: New summaries posted weekly covering the latest influential research
+* **Critical Analysis**: Beyond just summarizing, I provide context and critical thoughts on each paper
+* **Practical Applications**: I highlight potential real-world applications of theoretical research
+* **Technical Accuracy**: All summaries maintain technical precision while being accessible
 
 ## My Background
 
-[You can add details about your education, work experience, or personal journey here]
+I have a background in computer science with a focus on AI and machine learning technologies. My experience includes both academic research and practical implementation of AI systems, giving me a well-rounded perspective when analyzing new papers.
 
-## Skills
+## Paper Categories I Cover
 
-- **Programming Languages**: [List your programming languages]
-- **Machine Learning**: [List ML/DL frameworks and techniques you're familiar with]
-- **Data Analysis**: [List data analysis tools you use]
-- **Financial Analysis**: [If applicable, list relevant skills]
+* Neural Networks and Deep Learning Architectures
+* Natural Language Processing (NLP)
+* Computer Vision
+* Reinforcement Learning
+* Generative AI
+* Ethics in AI
+* AI Interpretability and Explainability
+* Emerging Research Directions
 
-## Research Interests
-
-- Deep Learning architectures and applications
-- Financial market analysis using AI
-- [Other research interests]
-
-## Hobbies
-
-When I'm not coding or researching, I enjoy [list your hobbies or interests outside of tech].
-
-Feel free to reach out through my [contact page](/contact) or connect with me on [GitHub](https://github.com/Pinkbro05/) and [Instagram](https://instagram.com/pinkbro__/).
+Feel free to [contact me](/contact) with suggestions for papers to cover or any questions about the content on this blog.
