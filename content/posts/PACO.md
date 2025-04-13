@@ -1,6 +1,6 @@
 +++
 title = "PACO - Pink Ant Colony Optimization"
-date = "2025-04-12"
+date = "2025-04-13"
 author = "Pink"
 cover = ""
 tags = ["Optimization", "Shortest Path Problem", "Travelling Sale Man"]
@@ -9,6 +9,7 @@ description = "Discuss about PACO, shorest path problem and TSP problem"
 showFullContent = false
 readingTime = true
 hideComments = false
+math = true  # Enable math rendering for this post
 +++
 
 ## Paper Information
@@ -24,9 +25,17 @@ This blog introduce PACO, an ACO algorithm use wide range of comprehensive techn
 
 ## Problem Statement
 
-The Routing Finding Problem also known as Shortest Path Problem where the algorithm needs to determining the most optimal path between a starting location (origin) and one or more target locations (destinations) in a given environment, It’s also have many of variable such as Traveling Sale Man (TSP) where the algorithm need to construct a tour which travel to all locations only once and comeback to the start location. In this project, the environment is modeled as a 2D directed graph, where nodes represent locations and edges represent possible paths with associated traversal cost (the connection between nodes can be either 1 direction or bidirectional). The goal is to search for the lowest-cost path from the origin to one of the destination nodes. Also, in this project, we also explore TSP. To model this problem, we represent the problem using graph data structure. A graph contains a finite set of nodes and a set of directed or undirected edges that connect pairs of nodes. 
+The Routing Finding Problem also known as Shortest Path Problem where the algorithm needs to determining the most optimal path between a starting location (origin) and one or more target locations (destinations) in a given environment, It's also have many of variable such as Traveling Sale Man (TSP) where the algorithm need to construct a tour which travel to all locations only once and comeback to the start location. 
 
-Ant Colony Optimization (ACO) : ACO is a meta-heuristic inspired by the ant’s behavior. It uses probabilistic paths influenced by pheromone trails and heuristic information. ACO is well-suited for complex and dynamic problems but can be computationally expensive.
+In mathematical terms, given a graph $G = (V, E)$ with vertices $V$ and edges $E$, and a cost function $c: E \rightarrow \mathbb{R}^+$, find a path $P = (v_1, v_2, \ldots, v_n)$ such that:
+
+$$\sum_{i=1}^{n-1} c(v_i, v_{i+1})$$
+
+is minimized, where $v_1$ is the origin and $v_n$ is the destination.
+
+In this project, the environment is modeled as a 2D directed graph, where nodes represent locations and edges represent possible paths with associated traversal cost (the connection between nodes can be either 1 direction or bidirectional). The goal is to search for the lowest-cost path from the origin to one of the destination nodes. Also, in this project, we also explore TSP. To model this problem, we represent the problem using graph data structure. A graph contains a finite set of nodes and a set of directed or undirected edges that connect pairs of nodes. 
+
+Ant Colony Optimization (ACO) : ACO is a meta-heuristic inspired by the ant's behavior. It uses probabilistic paths influenced by pheromone trails and heuristic information. ACO is well-suited for complex and dynamic problems but can be computationally expensive.
 
 ## Methodology
 
@@ -38,6 +47,30 @@ The approach is remarkably straightforward:
 4. **Local Search (2opt)**: Using local search every certain iteration to improve the quality of solution
 5. **Floyd Warshall**: This algorithm is applied to refine the graph before applying ACO
 6. **Parrallelize ant processing**: Using ThreadPoolExecutor to ultilize multiple threads of CPU
+
+### ACO Formula and Implementation
+
+The core of ACO is the pheromone update rule:
+
+$$\tau_{xy} \leftarrow (1-\rho) \cdot \tau_{xy} + \sum_{k=1}^{m} \Delta\tau_{xy}^{k}$$
+
+Where:
+- $\tau_{xy}$ represents the pheromone level on edge $(x,y)$
+- $\rho$ is the evaporation rate, typically in $[0,1)$
+- $\Delta\tau_{xy}^{k}$ is the pheromone deposited by ant $k$
+
+The transition probability for an ant to move from node $i$ to node $j$ is:
+
+$$p_{ij}^k = 
+\begin{cases} 
+\frac{[\tau_{ij}]^\alpha \cdot [\eta_{ij}]^\beta}{\sum_{l \in N_i^k} [\tau_{il}]^\alpha \cdot [\eta_{il}]^\beta} & \text{if } j \in N_i^k \\
+0 & \text{otherwise}
+\end{cases}$$
+
+Where:
+- $N_i^k$ is the feasible neighborhood of node $i$ for ant $k$
+- $\alpha$ and $\beta$ are parameters controlling the influence of pheromone versus heuristic information
+- $\eta_{ij}$ is the heuristic information, typically $\eta_{ij} = \frac{1}{d_{ij}}$ where $d_{ij}$ is the distance
 
 ## My Analysis
 
@@ -61,12 +94,12 @@ The success of ViT has had profound implications:
 The paper also raised important questions about the necessity of domain-specific inductive biases versus the power of large-scale learning from data. This debate continues to shape research in machine learning architecture design.
 
 ## Acknowledgement
-- COS30018 – Intelligence Systems – Swinburne: Module 8 – Collective Intelligence/Swarm Intelligence: Understanding theory of ACO algorithm, how ant indirect communication work (“Stigmergy”), how ant identify which path is optimize using concept of “pheromone” and “evaporate”. Understanding concept of Transition Probability Policy, Basic pheromone update formular. This lecture helps me understand what actually happens behind the ACO algorithm, knowing what hyper-parameter should consider and how they control performance.
+- COS30018 – Intelligence Systems – Swinburne: Module 8 – Collective Intelligence/Swarm Intelligence: Understanding theory of ACO algorithm, how ant indirect communication work ("Stigmergy"), how ant identify which path is optimize using concept of "pheromone" and "evaporate". Understanding concept of Transition Probability Policy, Basic pheromone update formular. This lecture helps me understand what actually happens behind the ACO algorithm, knowing what hyper-parameter should consider and how they control performance.
 
 - ACO blog and base code – Hasnain Roopawalla: 
 https://medium.com/@hasnain.roopawalla/ant-colony-optimization-1bbc346c2da5
 https://github.com/hasnainroopawalla/ant-colony-optimization/tree/master?tab=readme-ov-file
-Provide snippet code which can be used to solve problem with 1 origin and 1 destination. And also using external library for data structure. The author also used wrong formular, instead of updated pheromone with corrected formular:  τ_xy←(1- ρ)* τ_xy+ ∑_k^m▒〖∆τ_xy^k 〗, he used τ_xy←∑_k^m▒〖∆τ_xy^k+n(1- ρ) τ_xy 〗 where n is the number of time path being used in that iteration.
+Provide snippet code which can be used to solve problem with 1 origin and 1 destination. And also using external library for data structure. The author also used wrong formular, instead of updated pheromone with corrected formular:  $\tau_{xy} \leftarrow (1-\rho) \cdot \tau_{xy} + \sum_{k=1}^{m} \Delta\tau_{xy}^{k}$, he used $\tau_{xy} \leftarrow \sum_{k=1}^{m} \Delta\tau_{xy}^{k} + n(1-\rho)\tau_{xy}$ where $n$ is the number of time path being used in that iteration.
 
 - ACO blog: 
 http://www.theprojectspot.com/tutorial-post/ant-colony-optimization-

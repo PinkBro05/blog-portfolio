@@ -15,6 +15,12 @@ pagerSize = 20  # Add this section instead
 [markup.highlight]
 style = "github-dark"
 
+# Enable LaTeX math rendering
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # This allows HTML in Markdown which is needed for LaTeX rendering
+
 [params]
 author = "Pink"
 info = "AI Researcher"
@@ -30,7 +36,9 @@ customCSS = []
 # Custom SCSS, file path is relative to Hugo's asset folder (default: {your project root}/assets)
 customSCSS = []
 # Custom JS
-customJS = []
+customJS = ["js/katex.js"]  # We'll create this file for LaTeX support
+# Enable math typesetting with KaTeX
+math = true
 
 # Social links
 [[params.social]]
