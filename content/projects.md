@@ -1,7 +1,7 @@
 +++
 title = "Projects"
 description = "A collection of my key projects in AI, machine learning, and financial market analysis"
-layout = "page"
+layout = "single"
 +++
 
 <style>
