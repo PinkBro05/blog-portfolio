@@ -17,6 +17,33 @@ layout = "page"
   --container-width: min(95%, 1400px); /* Updated for better wide screen support */
 }
 
+/* Direct override for the theme's container styling */
+section.container.page {
+  max-width: 95% !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+  padding: 20px !important;
+}
+
+/* Override for the article styling within the container */
+section.container.page article {
+  /* Add any specific article styling here if needed */
+}
+
+/* Fix for text alignment in article paragraphs */
+section.container.page article p {
+  text-align: center !important;
+}
+
+/* Special rule for project card paragraphs */
+section.container.page article .project-card p {
+  text-align: left !important;
+  text-justify: none !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+}
+
 /* Override theme's container styling */
 .container.page {
   max-width: 95% !important;
