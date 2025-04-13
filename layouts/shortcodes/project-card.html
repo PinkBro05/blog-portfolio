@@ -1,0 +1,26 @@
+{{ $title := .Get "title" }}
+{{ $role := .Get "role" }}
+{{ $github := .Get "github" | default "" }}
+{{ $link := .Get "link" | default "" }}
+{{ $linktext := .Get "linktext" | default "View Project" }}
+
+<div class="project-card">
+  <h3>{{ $title }}</h3>
+  <div class="role"><strong>{{ $role | default "Role" }}:</strong> {{ .Get "rolevalue" }}</div>
+  <div class="description">
+    <p>{{ .Inner | markdownify }}</p>
+  </div>
+  <div class="contributions">
+    <p><strong>Key Contributions:</strong></p>
+    <ul>
+      {{ range split (.Get "contributions") "|" }}
+        <li>{{ . | markdownify }}</li>
+      {{ end }}
+    </ul>
+  </div>
+  <div class="links">
+    {{ if $github }}🔗 <a href="{{ $github }}">GitHub Repository</a>{{ end }}
+    {{ if and $github $link }} | {{ end }}
+    {{ if $link }}🔗 <a href="{{ $link }}">{{ $linktext }}</a>{{ end }}
+  </div>
+</div>
