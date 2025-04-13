@@ -203,7 +203,7 @@ header p {
 }
 
 .container.page {
-  max-width: 80%;
+  max-width: 95%;
   margin: 0 auto;
   padding: 20px;
 }
@@ -211,9 +211,33 @@ header p {
 p {
   text-align: center;
 }
+
+.intro-text {
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin: 20px 0;
+}
+
+/* Fix for project description text alignment */
+.project-card p {
+  text-align: left !important;
+  text-justify: none;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+}
+
+/* Ensure content respects container on mobile */
+@media only screen and (max-width: 768px) {
+  .project-card p {
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+}
 </style>
 
-A collection of my key projects in AI, machine learning, and financial market analysis.
+<p class="intro-text">A collection of my key projects in AI, machine learning, and financial market analysis.</p>
 
 {{< section-title >}}
 Featured Projects
@@ -273,16 +297,6 @@ A deep learning project to classify Vietnamese blog titles using Transformer mod
     contributions="Developed predictive models with Transformers, LSTMs, GRUs, and CNNs|Conducted feature engineering for complex market analysis|Applied interdisciplinary approach combining finance and AI" 
 >}}
 A real-world industry project supporting commodity futures trading (gold, oil) using ML/DL. Analyzed geopolitical, economic, and financial factors.
-{{< /project-card >}}
-
-{{< project-card 
-    title="Personal Blog &amp; Portfolio" 
-    role="Tech Stack" 
-    rolevalue="Hugo, HTML/CSS, JavaScript"
-    github="https://github.com/Pinkbro05/blog-portfolio"
-    linktext="View on GitHub"
->}}
-The website you're currently viewing! Built with Hugo using the Coder theme, featuring responsive design and dark/light mode toggle.
 {{< /project-card >}}
 {{< /projects-container >}}
 
