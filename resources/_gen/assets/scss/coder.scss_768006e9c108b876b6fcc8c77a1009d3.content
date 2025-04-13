@@ -305,6 +305,11 @@ template {
 [hidden] {
   display: none; }
 
+.container_page {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 15px; }
+
 /*!
  * Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
