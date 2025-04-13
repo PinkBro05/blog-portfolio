@@ -14,7 +14,7 @@ layout = "page"
   --border-radius: 10px;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   --spacing: 20px;
-  --container-width: 95%;
+  --container-width: min(95%, 1400px); /* Updated for better wide screen support */
 }
 
 body {
@@ -53,6 +53,7 @@ header p {
   width: var(--container-width);
   margin-left: auto;
   margin-right: auto;
+  justify-content: center; /* Center items in container */
 }
 
 .project-card {
@@ -69,6 +70,7 @@ header p {
   margin-bottom: var(--spacing);
   box-sizing: border-box;
   min-height: 200px;
+  max-width: 600px; /* Added max-width for very wide screens */
 }
 
 .project-card:hover {
@@ -158,7 +160,18 @@ header p {
   font-weight: bold;
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 1920px) {
+  :root {
+    --container-width: min(90%, 1800px);
+  }
+  
+  .project-card {
+    width: calc(33.333% - var(--spacing));
+    padding: 25px;
+  }
+}
+
+@media (max-width: 1400px) {
   .project-card {
     width: calc(50% - var(--spacing));
   }
@@ -166,7 +179,8 @@ header p {
 
 @media (max-width: 768px) {
   .project-card {
-    width: 100%;
+    width: calc(100% - var(--spacing));
+    float: none;
   }
 }
 
@@ -174,6 +188,11 @@ header p {
   .project-card {
     width: 100%;
     float: none;
+    padding: 15px;
+  }
+  
+  :root {
+    --spacing: 15px;
   }
 }
 
