@@ -5,16 +5,56 @@ layout = "single"
 +++
 
 <style>
+/* Dark/Light mode color variables */
 :root {
+  --primary-color: var(--fg-color);
+  --secondary-color: var(--fg-color-secondary);
+  --accent-color: var(--link-color, #ff69b4);
+  --background-color: var(--bg-color);
+  --card-background: var(--alt-bg-color, #1e1e1e);
+  --border-radius: 10px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --spacing: 20px;
+  --container-width: min(95%, 1400px);
+}
+
+/* Default colors for light mode */
+body.colorscheme-light {
+  --primary-color: #212121;
+  --secondary-color: #666666;
+  --accent-color: #ff69b4;
+  --background-color: #ffffff;
+  --card-background: #f5f5f5;
+}
+
+/* Default colors for dark mode */
+body.colorscheme-dark {
   --primary-color: #ffffff;
   --secondary-color: #a0a0a0;
   --accent-color: #ff69b4;
   --background-color: #121212;
   --card-background: #1e1e1e;
-  --border-radius: 10px;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --spacing: 20px;
-  --container-width: min(95%, 1400px); /* Updated for better wide screen support */
+}
+
+/* Auto mode uses system preference */
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    --primary-color: #ffffff;
+    --secondary-color: #a0a0a0;
+    --accent-color: #ff69b4;
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body.colorscheme-auto {
+    --primary-color: #212121;
+    --secondary-color: #666666;
+    --accent-color: #ff69b4;
+    --background-color: #ffffff;
+    --card-background: #f5f5f5;
+  }
 }
 
 /* Direct override for the theme's container styling */
