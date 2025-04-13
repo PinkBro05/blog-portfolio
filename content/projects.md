@@ -17,6 +17,19 @@ layout = "page"
   --container-width: min(95%, 1400px); /* Updated for better wide screen support */
 }
 
+/* Override theme's container styling */
+.container.page {
+  max-width: 95% !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+  padding: 20px !important;
+}
+
+/* Override theme's text justification in articles */
+.container.page article p {
+  text-align: center !important;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -213,7 +226,7 @@ p {
 }
 
 .intro-text {
-  text-align: center;
+  text-align: center !important;
   width: 100%;
   display: block;
   margin: 20px 0;
@@ -222,10 +235,10 @@ p {
 /* Fix for project description text alignment */
 .project-card p {
   text-align: left !important;
-  text-justify: none;
-  hyphens: none;
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
+  text-justify: none !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
 }
 
 /* Ensure content respects container on mobile */
