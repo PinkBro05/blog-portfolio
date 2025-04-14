@@ -21,23 +21,32 @@ math = true  # Enable math rendering for this post
 
 ## TL;DR
 
-This blog introduce PACO, an ACO algorithm use wide range of comprehensive technique to improve the quality of solution and reduce time complexity and computational cost.
+This blog introduces PACO, an ACO algorithm use wide range of comprehensive techniqus to improve the quality of solution and reduce time complexity and computational cost.
 
 ## Problem Statement
 
-The Routing Finding Problem also known as Shortest Path Problem where the algorithm needs to determining the most optimal path between a starting location (origin) and one or more target locations (destinations) in a given environment, It's also have many of variable such as Traveling Sale Man (TSP) where the algorithm need to construct a tour which travel to all locations only once and comeback to the start location. 
+The Routing Finding Problem also known as Shortest Path Problem where the algorithm needs to determining the most optimal path between a starting location (origin) and one or more target locations (destinations) in a given environment, It's also have many of variable such as Traveling Sale Man (TSP) where the algorithm need to construct a tour which travel to all locations only once and comeback to the start location. In this project, we will primarily focus on Shorest Path Problem.
 
-In mathematical terms, given a graph $G = (V, E)$ with vertices $V$ and edges $E$, and a cost function $c: E \rightarrow \mathbb{R}^+$, find a path $P = (v_1, v_2, \ldots, v_n)$ such that:
+In mathematical terms, given a graph $G = (V, E)$ with vertices $V$ and edges $E$, and a cost function $L: E \rightarrow \mathbb{R}^+$, find a path $P = (v_1, v_2, \ldots, v_n)$ such that:
 
-$$\sum_{i=1}^{n-1} c(v_i, v_{i+1})$$
+$$\sum_{i=1}^{n-1} L(v_i, v_{i+1})$$
 
 is minimized, where $v_1$ is the origin and $v_n$ is the destination.
 
-In this project, the environment is modeled as a 2D directed graph, where nodes represent locations and edges represent possible paths with associated traversal cost (the connection between nodes can be either 1 direction or bidirectional). The goal is to search for the lowest-cost path from the origin to one of the destination nodes. Also, in this project, we also explore TSP. To model this problem, we represent the problem using graph data structure. A graph contains a finite set of nodes and a set of directed or undirected edges that connect pairs of nodes. 
+The environment is modeled as a 2D directed graph, where nodes represent locations and edges represent possible paths with associated traversal cost (the connection between nodes can be either 1 direction or bidirectional). The goal is to search for the lowest-cost path from the origin to one of the destination nodes.
 
-Ant Colony Optimization (ACO) : ACO is a meta-heuristic inspired by the ant's behavior. It uses probabilistic paths influenced by pheromone trails and heuristic information. ACO is well-suited for complex and dynamic problems but can be computationally expensive.
+There are many of algorithms which can use for this problem such as:
+- Breadth-First Search (BFS) - exploring all neighboring nodes at the current depth before moving to the next level
+- Depth-First Search (DFS) - exploring as far as possible along each branch before backtracking
+- A* (A-Star) Search: combines the cost to reach the node and a **heuristic estimate** of the remaining cost to the goal
+- Greedy Best-First Search (GBFS): **only** use the **heuristic estimate** to guide its search
+- Dijkstra's Algorithm: Only use cost of path without need heuristics.
 
-## Methodology
+Now, you may question that what is **heuristic estimate** ? This is a function which help an algorithm estimate the quality of 
+
+Ant Colony Optimization (ACO) : ACO is a meta-heuristic inspired by the ant's behavior. It uses probabilistic paths influenced by pheromone trails and heuristic information. ACO is well-suited for complex and dynamic problems but can be computationally expensive. 
+
+<!-- ## Methodology
 
 The approach is remarkably straightforward:
 
@@ -46,7 +55,7 @@ The approach is remarkably straightforward:
 3. **MaxMin**: The pheromone of a path is bounding in a certain range
 4. **Local Search (2opt)**: Using local search every certain iteration to improve the quality of solution
 5. **Floyd Warshall**: This algorithm is applied to refine the graph before applying ACO
-6. **Parrallelize ant processing**: Using ThreadPoolExecutor to ultilize multiple threads of CPU
+6. **Parrallelize ant processing**: Using ThreadPoolExecutor to ultilize multiple threads of CPU -->
 
 ### ACO Formula and Implementation
 
