@@ -21,7 +21,7 @@ math = true  # Enable math rendering for this post
 
 ## Abstract
 
-This blog introduces PACO, an ACO algorithm use wide range of comprehensive techniqus to improve the quality of solution and reduce time complexity and computational cost.
+This blog introduces PACO, an ACO algorithm use wide range of comprehensive techniqus to improve the quality of solution and reduce time complexity and computational cost, including: **Gradient Descent and AdaDelta optimizer, Elitist, Maxmin system, Local search (2opt), Floyd Warshall and Parallelize processing.**.
 
 ## Problem Statement
 
@@ -40,17 +40,6 @@ There are many of **heuristic** algorithms which can use for this problem such a
 Now, you may question that what is **heuristic** ?  In the simple word, its "prior environment knowledge" which help algorithm to find the best (approximately) next node making the path shortest. There are many heuristic *function* can be defined but the most easiest is "cost" or "distance" of the path between node - let say we stand at node A which can move to node B (5 meter), C (10 meter) then we simply choose B. Of course, designing a robust algorithm is not that easy, this function usually encodes our **extra** knowledge of the problem. A higher level of heuristic is meta-heuristic wherein the algorithm design smaller heristic function to find a sufficiently good solution. 
 
 Ant Colony Optimization (ACO) : ACO is a meta-heuristic inspired by the ant's behavior. It uses probabilistic paths influenced by pheromone trails and heuristic information. ACO is well-suited for complex and dynamic problems but can be computationally expensive. 
-
-<!-- ## Methodology
-
-The approach is remarkably straightforward:
-
-1. **Gradient Descent and AdaDelta Optimizer**: Implementing gradient descent for adaptively update pheromone.
-2. **Elitist**: Global best ant get more reward (deposit extra pheromone)
-3. **MaxMin**: The pheromone of a path is bounding in a certain range
-4. **Local Search (2opt)**: Using local search every certain iteration to improve the quality of solution
-5. **Floyd Warshall**: This algorithm is applied to refine the graph before applying ACO
-6. **Parrallelize ant processing**: Using ThreadPoolExecutor to ultilize multiple threads of CPU -->
 
 ### ACO Formula and Implementation
 
