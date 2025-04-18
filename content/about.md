@@ -18,6 +18,7 @@ I specialize in summarizing and analyzing research papers in the fields of **Art
 * **Regular Updates**: New summaries posted weekly covering the latest influential research
 * **Critical Analysis**: Beyond just summarizing, I provide context and critical thoughts on each paper
 * **Practical Applications**: I highlight potential real-world applications of theoretical research
+* **Note**: I assume my audience have basic knowledge of Machine learning
 
 ## My Background
 
@@ -30,7 +31,7 @@ I have a background in computer science with a focus on AI and machine learning 
 * Reinforcement Learning
 * Generative AI
 * Ethics in AI
-* AI Interpretability and Explainability
+* AI Cognitive
 * Emerging Research Directions
 * Optimization algorithm
 

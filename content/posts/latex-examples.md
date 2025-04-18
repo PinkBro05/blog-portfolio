@@ -41,6 +41,16 @@ $$
 \end{align}
 $$
 
+## Table
+$$
+\begin{array}{ccc}
+\text{Heading 1} & \text{Heading 2} & \text{Heading 3} \\\ \hline
+\text{Data A1} & \text{Data A2} & \text{Dat A3} \\\
+\text{Data B1} & \text{Dat B2} & \text{Data B3} \\\
+\text{Data C1} & \text{Data C2} & \text{Data C3} \\\
+\end{array}
+$$
+
 ## Matrices
 
 LaTeX is great for displaying matrices:
@@ -76,36 +86,16 @@ Special mathematical symbols are also available:
 - Sum notation: $\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$
 - Product notation: $\prod_{i=1}^{n} i = n!$
 
-## Algorithm and Pseudocode
-
-You can also write algorithm pseudocode with LaTeX:
-
-$$
-\begin{algorithm}
-\caption{Gradient Descent}
-\begin{algorithmic}
-\STATE Initialize parameters $\theta$, learning rate $\alpha$, tolerance $\epsilon$
-\REPEAT
-  \STATE Compute gradient $g = \nabla_\theta J(\theta)$
-  \STATE Update parameters $\theta = \theta - \alpha \cdot g$
-\UNTIL{$\|g\| < \epsilon$}
-\end{algorithmic}
-\end{algorithm}
-$$
-
 ## Diagrams and Trees
 
-LaTeX can also be used for simple diagrams:
+LaTeX can also be used for simple diagrams. Here's a representation of a directed graph:
 
 $$
-\begin{tikzpicture}
-\node[circle,draw] (A) at (0,0) {A};
-\node[circle,draw] (B) at (2,0) {B};
-\node[circle,draw] (C) at (1,1.5) {C};
-\draw[->] (A) -- (B);
-\draw[->] (A) -- (C);
-\draw[->] (B) -- (C);
-\end{tikzpicture}
+\begin{array}{ccc}
+& C & \\\
+\nearrow & \uparrow & \searrow \\\
+A & \rightarrow & B \\\
+\end{array}
 $$
 
 ## Tips for Using LaTeX in Blog Posts
